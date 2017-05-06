@@ -67,7 +67,7 @@
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Upload  Resume</label>
                             <div class="col-md-6">
-                                <input id="file_path" type="file" name="file_path" accept="application/pdf" >
+                                <input id="file_path" type="file" class="btn btn-primary" name="file_path" accept="application/pdf" >
                                 @if ($errors->has('file_path'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('file_path') }}</strong>
