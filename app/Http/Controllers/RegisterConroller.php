@@ -30,6 +30,7 @@ class RegisterConroller extends Controller
        }
 
       $user->save();
+      $id=$user->id;
 
       $email=$user->email;
       $name=$user->name;
@@ -40,7 +41,8 @@ class RegisterConroller extends Controller
       {
          $m->to($toEmail)->subject($subject);
       });
+         \Auth::loginUsingId($id);
+      return redirect('/home');
 
-      return back();
     }
 }
