@@ -9,6 +9,18 @@ class RegisterConroller extends Controller
 {
     public function userstore(Request $request)
     {
+      $validate = $this->validate($request,[
+          'name' => 'required',
+          'email' => 'required|unique:users,email',
+          'phone' => 'max:10|integer',
+          'password' => 'required|min:6',
+          'confirm_password' => 'required|min:6|same:password'
+        ]);
+        if ($validator->fails()) {
+           return back()
+                         ->withErrors($validator)
+                          ->withInput();
+       }
       $user= new User;
       $user->name=$request->name;
       $user->email=$request->email;

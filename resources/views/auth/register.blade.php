@@ -44,9 +44,9 @@
                             <div class="col-md-6">
                                 <input id="phone" type="text" class="form-control" name="phone" value="{{ old('name') }}" required autofocus>
 
-                                @if ($errors->has('phone_no'))
+                                @if ($errors->has('phone'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('phone_no') }}</strong>
+                                        <strong>{{ $errors->first('phone') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -57,9 +57,9 @@
                             <div class="col-md-6">
                                 <input id="current_location" type="text" class="form-control" name="current_location" value="{{ old('name') }}" required autofocus>
 
-                                @if ($errors->has('phone_no'))
+                                @if ($errors->has('current_location'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('phone_no') }}</strong>
+                                        <strong>{{ $errors->first('current_location') }}</strong>
                                     </span>
                                 @endif
                             </div>
